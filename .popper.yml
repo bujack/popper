@@ -5,6 +5,15 @@ metadata:
   publication_type: article
   upload_type: publication
 pipelines:
+  co2-emissions:
+    envs:
+      host:
+        args: []
+    path: pipelines/co2-emissions
+    stages:
+    - setup
+    - run
+    - validate
   mypipe:
     envs:
       host:
@@ -14,17 +23,6 @@ pipelines:
     requirements: {}
     stages:
     - download-data
-    - run-analysis
-    - plot-graphs
-  mypipeline:
-    envs:
-      host:
-        args: []
-    parameters: []
-    path: pipelines/mypipeline
-    requirements: {}
-    stages:
-    - ddownload-data
     - run-analysis
     - plot-graphs
 search_sources:
